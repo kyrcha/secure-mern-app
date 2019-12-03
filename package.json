@@ -1,0 +1,39 @@
+{
+  "name": "secure-mern-app",
+  "version": "1.0.0",
+  "description": "Building a secure web app with the MERN stack",
+  "scripts": {
+    "start:back-end": "node back-end/server.js | ./node_modules/.bin/bunyan",
+    "start": "NODE_ENV=production node ./back-end/server.js",
+    "postinstall": "npm install --prefix ./front-end && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-preinstall": "ls",
+    "heroku-postinstall": "ls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyrcha/secure-mern-app.git"
+  },
+  "keywords": [
+    "mongo",
+    "node",
+    "express",
+    "react",
+    "security"
+  ],
+  "author": "Kyriakos Chatzidimitriou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyrcha/secure-mern-app/issues"
+  },
+  "homepage": "https://github.com/kyrcha/secure-mern-app#readme",
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
