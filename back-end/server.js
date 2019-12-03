@@ -1,8 +1,8 @@
 require('dotenv').config()
-import { listen } from './app';
-import logger from './logger';
+const app = require('./app')
+const logger = require('./logger')
 
-listen(process.env.PORT || port, err => {
+app.listen(process.env.PORT || port, err => {
   if(err) {
     logger.error(err);
   }

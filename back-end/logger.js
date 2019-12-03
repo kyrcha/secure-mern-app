@@ -1,4 +1,4 @@
-import { createLogger } from 'bunyan';
-const logger = createLogger({name: "back-end"});
+const bunyan = require('bunyan')
+const logger = bunyan.createLogger({name: "back-end"});
 
-export default logger
+module.exports = logger
