@@ -1,0 +1,11 @@
+{
+  "env": {
+      "browser": true,
+      "node": true
+      },
+  "parser": "babel-eslint",
+  "rules": {
+    "import/prefer-default-export": "off",
+    "node/no-unsupported-features/es-syntax": "off"
+  }
+}

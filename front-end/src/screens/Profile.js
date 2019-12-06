@@ -1,14 +1,13 @@
-
 import React from 'react';
 
-class Users extends React.Component {
+class Profile extends React.Component {
   render() {
     return (
       <section className="hero">
         <div className="hero-body">
           <div className="container">
-            <h1 className="title">Users</h1>
-            <h2 className="subtitle">If you are an admin we will list here all the users</h2>
+            <h1 className="title">Profile</h1>
+            <h2 className="subtitle">Editable user profile</h2>
           </div>
         </div>
       </section>
@@ -16,4 +15,4 @@ class Users extends React.Component {
   }
 }
 
-export default Users;
+export default Profile;

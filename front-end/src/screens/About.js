@@ -1,6 +1,5 @@
 
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 class About extends React.Component {
   render() {
@@ -8,9 +7,8 @@ class About extends React.Component {
       <section className="hero">
         <div className="hero-body">
           <div className="container">
-            <h1 className="title">User Admin Demo</h1>
-            <h2 className="subtitle">React, redux and react-router demo</h2>
-            <Link to='about' className='btn btn-primary btn-lg'>Learn More</Link>
+            <h1 className="title">About</h1>
+            <h2 className="subtitle">What is this about</h2>
           </div>
         </div>
       </section>

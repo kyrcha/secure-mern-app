@@ -11,25 +11,25 @@ const Header = () => {
         <Link to='home' className='navbar-item'>
           <FontAwesomeIcon icon={faShieldAlt} size='2x'/>
         </Link>
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
       <div className="navbar-menu">
-        <div class="navbar-start">
+        <div className="navbar-start">
           <NavLink to="/" className="navbar-item" activeClassName='active'>Home</NavLink>
           <NavLink to="/users" className="navbar-item" activeClassName='active'>Users</NavLink>
           <NavLink to="/about" className="navbar-item" activeClassName='active'>About</NavLink>
         </div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <NavLink to="signup" class="button is-light">
+        <div className="navbar-end">
+          <div className="navbar-item">
+            <div className="buttons">
+              <NavLink to="signup" className="button is-light">
                 <strong>Sign up</strong>
               </NavLink>
-              <NavLink to="login" class="button is-light">
+              <NavLink to="login" className="button is-light">
                 Log in
               </NavLink>
             </div>

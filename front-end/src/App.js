@@ -1,39 +1,44 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Home from './screens/Home';
 import About from './screens/About';
 import Users from './screens/Users';
+import Signup from './screens/Signup';
+import Login from './screens/Login';
+import Forgot from './screens/Forgot';
+import Reset from './screens/Reset';
 import Header from './components/Header';
+import ProtectedRoute from './components/ProtectedRoute'
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Header/>
-          <div className="section">
-            <Route exact path="/" component={Home} />
-            <Route path="/users" component={Users} />
-            <Route path="/about" component={About} />
-          </div>
-      </div>
-          {/* <div className="App">
-      <header className="App-header">
+ // Call it once in your app. At the root of your app is the best place
+ toast.configure()
 
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div> */}
-    </Router>
-  );
+class App extends Component {
+
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <Header/>
+            <div className="section">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <ProtectedRoute path="/users" component={Users} />
+                <Route path="/about" component={About} />
+                <Route path="/login" component={Login} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/forgot" component={Forgot} />
+                <Route path="/reset" component={Reset} />
+              </Switch>
+            </div>
+        </div>
+      </Router>
+    );
+  }
+
 }
 
 export default App;

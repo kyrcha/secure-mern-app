@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "Building a secure web app with the MERN stack",
   "scripts": {
-    "start:back-end": "node back-end/server.js | ./node_modules/.bin/bunyan",
+    "start:back-end": "nodemon --ignore 'front-end/*' back-end/server.js | ./node_modules/.bin/bunyan",
+    "test:back-end": "jest --coverage --outputFile=coverage.json",
     "build": "rm -rf build && mkdir build && mkdir -p build/front-end && npm run build --prefix ./front-end && cp -r ./front-end/build ./build/front-end/build",
     "start": "NODE_ENV=production node ./back-end/server.js",
     "postinstall": "npm install --prefix ./front-end",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-preinstall": "ls",
-    "heroku-postinstall": "ls"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -29,12 +28,54 @@
   },
   "homepage": "https://github.com/kyrcha/secure-mern-app#readme",
   "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
     "bunyan": "^1.8.12",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "heroku-ssl-redirect": "0.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.7.13",
+    "morgan": "^1.9.1"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "<rootDir>/front-end/",
+      "<rootDir>/node_modules/"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/front-end/",
+      "<rootDir>/node_modules/",
+      "<rootDir>/coverage/"
+    ],
+    "coverageReporters": [
+      "json-summary",
+      "json",
+      "text-summary",
+      "lcov"
+    ]
   },
   "devDependencies": {
+    "@figify/eslint-config": "^1.0.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-import": "^2.18.2"
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-json": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-sonarjs": "^0.5.0",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.1",
+    "supertest": "^4.0.2"
   }
 }
